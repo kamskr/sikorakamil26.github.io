@@ -9,3 +9,7 @@
 #terminal div.in{
     color: blue;
 }
+
+body{
+    box-align: center;
+}
