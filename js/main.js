@@ -19,30 +19,30 @@ function onStartButtonClick() {
       characteristicUuid = parseInt(characteristicUuid);
     }
   
-    log('Requesting Bluetooth Device...');
+    console.log('Requesting Bluetooth Device...');
     navigator.bluetooth.requestDevice({filters: [{services: [serviceUuid]}]})
     .then(device => {
-      log('Connecting to GATT Server...');
+      console.log('Connecting to GATT Server...');
       return device.gatt.connect();
     })
     .then(server => {
-      log('Getting Service...');
+      console.log('Getting Service...');
       return server.getPrimaryService(serviceUuid);
     })
     .then(service => {
-      log('Getting Characteristic...');
+      console.log('Getting Characteristic...');
       return service.getCharacteristic(characteristicUuid);
     })
     .then(characteristic => {
       myCharacteristic = characteristic;
       return myCharacteristic.startNotifications().then(_ => {
-        log('> Notifications started');
+        console.log('> Notifications started');
         myCharacteristic.addEventListener('characteristicvaluechanged',
             handleNotifications);
       });
     })
     .catch(error => {
-      log('Argh! ' + error);
+      console.log('Argh! ' + error);
     });
   }
 // disconnectButton.addEventListener('click',function(){
@@ -66,7 +66,7 @@ function onStartButtonClick() {
 //         requestBluetoothDevice()).
 //         then(device => connectDeviceAndCacheCharacteristic(device)).
 //         then(characteristic => startNotifications(characteristic)).
-//         catch(error => log(error));
+//         catch(error => s(error));
 // }
 
 // function requestBluetoothDevice(){
