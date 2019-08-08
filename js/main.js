@@ -29,8 +29,11 @@ function onStartButtonClick() {
       myCharacteristic = characteristic;
       return myCharacteristic.startNotifications().then(_ => {
         log('> Notifications started');
-        myCharacteristic.addEventListener('characteristicvaluechanged',
-            handleNotifications);
+        myCharacteristic.addEventListener('characteristicvaluechanged',function(event){
+            let value = event.target.value;
+            let a = [];
+            a.push(data.getUint8(value));
+            log('> ' + a.join(' '));
       });
     })
     .catch(error => {
@@ -52,15 +55,16 @@ function onStartButtonClick() {
     }
   }
   
-  function handleNotifications(event) {
-    let value = event.target.value;
-    let a = [];
-    // Convert raw data bytes to hex values just for the sake of showing something.
-    // In the "real" world, you'd use data.getUint8, data.getUint16 or even
-    // TextDecoder to process raw data bytes.
-    // for (let i = 0; i < value.byteLength; i++) {
-    //   a.push('0x' + ('00' + value.getUint8(i).toString(16)).slice(-2));
-    // }
-    a.push(data.getUint8());
-    log('> ' + a.join(' '));
-  }
+//   function handleNotifications(event) {
+//     let value = event.target.value;
+//     let a = [];
+//     // Convert raw data bytes to hex values just for the sake of showing something.
+//     // In the "real" world, you'd use data.getUint8, data.getUint16 or even
+//     // TextDecoder to process raw data bytes.
+//     // for (let i = 0; i < value.byteLength; i++) {
+//     //   a.push('0x' + ('00' + value.getUint8(i).toString(16)).slice(-2));
+//     // }
+//     a.push(data.getUint8(value));
+//     log('> ' + a.join(' '));
+//   }
+
