@@ -11,6 +11,7 @@ connectButton.addEventListener('click',function(){
 });
 
 function onStartButtonClick() {
+    log("hello");
     let serviceUuid = "0xFFE0";
     if (serviceUuid.startsWith('0x')) {
       serviceUuid = parseInt(serviceUuid);
