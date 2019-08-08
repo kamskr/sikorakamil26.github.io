@@ -29,11 +29,12 @@ function onStartButtonClick() {
       myCharacteristic = characteristic;
       return myCharacteristic.startNotifications().then(_ => {
         log('> Notifications started');
-        myCharacteristic.addEventListener('characteristicvaluechanged',function(event){
+        myCharacteristic.addEventListener('characteristicvaluechanged', function(event){
             let value = event.target.value;
             let a = [];
             a.push(data.getUint8(value));
             log('> ' + a.join(' '));
+        });
       });
     })
     .catch(error => {
