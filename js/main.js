@@ -1,7 +1,7 @@
 var myCharacteristic;
 
 function onStartButtonClick() {
-log("chuj");
+console.log("chuj");
 }
 //   let serviceUuid = document.querySelector('#service').value;
 //   if (serviceUuid.startsWith('0x')) {
