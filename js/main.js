@@ -11,12 +11,12 @@ connectButton.addEventListener('click',function(){
 });
 
 function onStartButtonClick() {
-    let serviceUuid = document.querySelector('#service').value;
+    let serviceUuid = 0xFFE0;
     if (serviceUuid.startsWith('0x')) {
       serviceUuid = parseInt(serviceUuid);
     }
   
-    let characteristicUuid = document.querySelector('#characteristic').value;
+    let characteristicUuid = 0xFFE1;
     if (characteristicUuid.startsWith('0x')) {
       characteristicUuid = parseInt(characteristicUuid);
     }
