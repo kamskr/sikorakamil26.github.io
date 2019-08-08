@@ -6,12 +6,9 @@ let sendForm = document.getElementById('send-form');
 let inputField = document.getElementById('input');
 
 //connect to the device on Connect button click
-connectButton.addEventListener('click',function(){
-    onStartButtonClick();
-});
+connectButton.addEventListener('click',onStartButtonClick);
 
 function onStartButtonClick() {
-    log("hello");
     let serviceUuid = "0xFFE0";
     if (serviceUuid.startsWith('0x')) {
       serviceUuid = parseInt(serviceUuid);
