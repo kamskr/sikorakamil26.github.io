@@ -12,10 +12,8 @@
         <button id="connect" type="button" onClick="connect();">Connect</button>
         <button id="disconnect" type="button" onClick="onStopButtonClick();">Disconnect</button>
 
-        <div id="term">
-            <div>Device connection...</div>
-            <div class="out">Outcoming message</div>
-            <div class="in">Incoming message</div>
+        <div class="terminal">
+            <textarea id="term" readonly class="terminal"></textarea>
         </div>
 
         <form id="send-form">

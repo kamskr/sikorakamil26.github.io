@@ -1,17 +1,18 @@
-#terminal div{
-    color: grey;
-}
-
-#terminal div.out{
-    color:red;
-}
-
-#terminal div.in{
-    color: blue;
-}
-
 body{
-    padding-left: 45%;
-    padding-top:20%;
-
+    margin:0;
 }
+
+div.terminal{
+    position: absolute;
+    font-size: 2vh;
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: calc(100% - 50px);
+}
+#term{
+    height: inherit;
+    width: inherit;
+    background-color: black;
+}
+

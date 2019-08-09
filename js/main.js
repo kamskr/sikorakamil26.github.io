@@ -1,4 +1,5 @@
 var myCharacteristic;
+var id;
 
   var deviceName;
 
@@ -50,10 +51,13 @@ var myCharacteristic;
     }
   }
 
+
+  //tu ogariaj kiedy sczyta kod z opaski!
   function handleNotifications(event) {
     let value = event.target.value;
     log(deviceName + "> " + new TextDecoder().decode(value));
     console.log('> Received: ' + new TextDecoder().decode(value));
+    id = new TextDecoder().decode(value);
   }
 
 
@@ -65,7 +69,7 @@ var myCharacteristic;
     document.getElementById("input").value = "";
   }
 
-  
+
   function str2ab(str) {
     var buf = new ArrayBuffer(str.length*2); // 2 bytes for each char
     var bufView = new Uint16Array(buf);
