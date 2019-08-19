@@ -1,0 +1,23 @@
+#main_color{
+    background-color: aquamarine;
+    width: 100%;    
+    height:90vh;
+}
+
+button {
+    float: left;
+    height: 10vh;
+    width: 40vw;
+}
+
+
+#next{
+    float:left; 
+    height: 35px;
+    width: 18.45vw;
+}
+#total{
+    float:left; 
+    height: 35px;
+    width: 18.45vw;
+}
