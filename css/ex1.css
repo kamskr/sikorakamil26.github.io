@@ -21,3 +21,9 @@ button {
     height: 35px;
     width: 18.45vw;
 }
+#exit {
+    background-color: rgb(48, 49, 51);
+    width: 5%;
+    height: 30px;
+    border-radius: 10px;
+}
