@@ -1,7 +1,6 @@
 var myCharacteristic;
 var id;
-
-  var deviceName;
+var deviceName;
 
   function connect() {
     let serviceUuid = "0000ffe0-0000-1000-8000-00805f9b34fb";
@@ -80,5 +79,7 @@ var id;
   }
 
   function log(str) {
+    console.log("no szukam diva byku");
     document.getElementById("term").value += str+"\n";
+
   }
