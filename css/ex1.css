@@ -1,29 +1,83 @@
-#main_color{
-    background-color: aquamarine;
-    width: 100%;    
-    height:90vh;
+body{
+    background-color: wheat;
 }
 
-button {
-    float: left;
-    height: 10vh;
-    width: 40vw;
+.container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 10fr 2fr;
+    grid-template-areas:
+        "header header header"
+        "main main main"
+        "left middle right";
+}
+
+.grid-item-color{
+    grid-area:main;
+    background-color: blue;
+}
+
+.btn{
+    background: #3D4C53;
+    overflow: hidden;
+    text-align : center;
+    transition : .2s;
+    cursor : pointer;
+    border-radius: 15px;
+    box-shadow: 0px 1px 2px rgba(0,0,0,.2);
 }
 
 
-#next{
-    float:left; 
-    height: 35px;
-    width: 18.45vw;
+
+.btn-txt{
+    font-size: 16px;
+    color : white;
 }
-#total{
-    float:left; 
-    height: 35px;
-    width: 18.45vw;
+
+.btn:active { /*Clicked and held*/
+    box-shadow: 0px 5px 6px rgba(0,0,0,0.3);
 }
-#exit {
-    background-color: rgb(48, 49, 51);
-    width: 5%;
-    height: 30px;
+
+#start{
+    grid-area:left;
+}
+
+#reset{
+    grid-area: middle;
+}
+
+.grid-item-time-container{
+    display:grid;
+    grid-area: right;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "top"
+        "bottom";
+
+}
+
+.grid-item-return{
+    grid-area:header;
+    background: #3D4C53;
+    overflow: hidden;
+    text-align : center;
+    cursor : pointer;
     border-radius: 10px;
+}
+
+.grid-item-return a{
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.grid-item-time-container > .item-child-next{
+    grid-area: top;
+    background-color:black;
+}
+
+.grid-item-time-container > .item-child-total{
+    grid-area: bottom;
+    background-color: darkslategrey;
 }

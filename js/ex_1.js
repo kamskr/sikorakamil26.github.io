@@ -1,19 +1,11 @@
-class ex_1 { 
-    constructor(time_1, time_2){
-        this.time_1 = time_1;
-        this.time_2 = time_2;
-    }
-    start(){
-        log(this.time_1);
-    }
-    stop(){
-        log('stop')
-    }
+
+function start(){
+  if(document.getElementById('txt-start').innerHTML == 'Start'){
+    document.getElementById('txt-start').innerHTML = "||"
+    document.getElementById('txt-start').style.color = 'white';
+    document.getElementById('txt-start').style.fontSize = '20px';
+  }else{
+    document.getElementById('txt-start').innerHTML = "Start";
+    document.getElementById('txt-start').style.fontSize = '16px';
   }
-  
-  
-    function test(){
-      const test = new ex_1(20, 3);
-      test.start();
-    }
-  
+}
