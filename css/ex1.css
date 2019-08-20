@@ -66,7 +66,7 @@ body{
     border-radius: 10px;
 }
 
-.grid-item-return a{
+.grid-item-return {
     color: white;
     text-decoration: none;
     padding: 5px;
