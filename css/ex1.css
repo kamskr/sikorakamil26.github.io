@@ -6,16 +6,24 @@ body{
     display: grid;
     justify-content: center;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 10fr 2fr;
+    grid-template-rows: 1fr 8fr 2fr;
     grid-template-areas:
-        "header header header"
+        "header north right"
         "main main main"
-        "left middle right";
+        "left left middle";
+}
+
+.grid-item-settings{
+    grid-area: north;
 }
 
 .grid-item-color{
-    grid-area:main;
-    background-color: blue;
+    grid-area: main;
+    font-size: 100px;
+    text-align: center;
+    background-color: white;
+    padding: 120px 0 0 0;
+    margin: 10px 0 20px 0;
 }
 
 .btn{
@@ -31,7 +39,7 @@ body{
 
 
 .btn-txt{
-    font-size: 16px;
+    font-size: 24px;
     color : white;
 }
 
@@ -45,20 +53,12 @@ body{
 
 #reset{
     grid-area: middle;
+    background-color: red;
 }
 
-.grid-item-time-container{
-    display:grid;
-    grid-area: right;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-        "top"
-        "bottom";
-
-}
 
 .grid-item-return{
-    grid-area:header;
+    grid-area: header;
     background: #3D4C53;
     overflow: hidden;
     text-align : center;
@@ -72,12 +72,14 @@ body{
     padding: 5px;
 }
 
-.grid-item-time-container > .item-child-next{
-    grid-area: top;
-    background-color:black;
+
+.item-child-total{
+    grid-area: right;
+    background-color: darkslategrey;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px 0 0 0;
+    border-radius: 10px;
 }
 
-.grid-item-time-container > .item-child-total{
-    grid-area: bottom;
-    background-color: darkslategrey;
-}
